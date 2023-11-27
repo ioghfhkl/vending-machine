@@ -1,0 +1,39 @@
+class VendingMachine:
+    def __init__(self):
+        self.items = {
+            '1': {'name': 'Macbook pro', 'price': 1500, 'quantity': 10},
+            '2': {'name': 'Apple watch', 'price': 1500, 'quantity': 15},
+            '3': {'name': 'Apple imac', 'price': 1500, 'quantity': 20}
+            '4': {'name': 'I pad', 'price': 500, 'quantity': 20}
+            '5': {'name': 'Iphone', 'price': 800, 'quantity': 20
+    def display_items(self):
+        print("Here are the available items:")
+        for key, item in self.items.items():
+            print(f"{key}: {item['name']} - ${item['price']} - Quantity: {item['quantity']}")
+
+    def purchase_item(self):
+        selection = input("Please select an item (1 for Soda, 2 for Chips, 3 for Candy): ")
+        if selection in self.items:
+            item = self.items[selection]
+            if item['quantity'] > 0:
+                print(f"You have selected {item['name']}. Please insert ${item['price']}.")
+                self.items[selection]['quantity'] -= 1
+            else:
+                print("Sorry, the item is out of stock.")
+        else:
+            print("Invalid selection. Please choose a valid item.")
+
+    def start(self):
+        while True:
+            self.display_menu()
+            choice = input("Enter your choice: ")
+            if choice == '1':
+            self.display_items(self):
+        print("Here are the available items:")
+        for key, item in self.items.items():
+            print(f"{key}: {item['name']} - ${item['price']} - Quantity: {item['quantity']}")
+# Instantiate the vending machine
+vending_machine = VendingMachine()
+
+# Start the vending machine interface
+vending_machine.start()
